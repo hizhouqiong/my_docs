@@ -1,0 +1,22 @@
+{
+  "name": "my-docs",
+  "version": "0.0.1",
+  "description": "总结面试题，为升职加薪做好准备",
+  "main": "index.js",
+  "authors": {
+    "name": "zq",
+    "email": ""
+  },
+  "repository": "/my-docs",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0",
+    "@vuepress/plugin-medium-zoom": "^1.0.0",
+    "vuepress": "^1.0.0-rc.1",
+    "vuepress-plugin-yuque": "^0.6.0"
+  }
+}
