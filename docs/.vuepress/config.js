@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: '前端面试题总结与思考',
+  title: '前端总结与思考',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -56,9 +56,13 @@ module.exports = {
         {
           title: 'javascript',
           collapsable: false,
-          children: []
+          children: [
+            '',
+            'tcp',
+            'closure',
+          ]
         }
-      ],
+      ]
     }
   },
 
