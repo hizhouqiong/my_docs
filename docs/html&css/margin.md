@@ -10,8 +10,8 @@ margin的top和bottom属性对非替换内联元素无效，例如span和 code�
 
 ### 实现垂直居中
 想要实现垂直方向的居中可以用绝对定位：
-```javascript
-div  {
+```css
+div {
     width: 20px;
     height: 20px;
     position: absolute;

@@ -68,6 +68,8 @@ module.exports = {
           collapsable: false,
           children: [
             'margin',
+            '扇形',
+            '垂直居中'
           ]
         }
       ]
