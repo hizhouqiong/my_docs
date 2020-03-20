@@ -49,6 +49,10 @@ module.exports = {
       {
         text: 'HTML&CSS',
         link: '/html&css/'
+      },
+      {
+        text: 'WEIXIN',
+        link: '/weixin/'
       }
     ],
     sidebar: {
