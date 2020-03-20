@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>用css实现已知或者未知宽度的垂直水平居中？ | 前端总结与思考</title>
+    <meta name="description" content="总结面试题，为升职加薪做好准备">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/my_docs/assets/css/0.styles.abe11094.css" as="style"><link rel="preload" href="/my_docs/assets/js/app.8092673c.js" as="script"><link rel="preload" href="/my_docs/assets/js/2.251bf567.js" as="script"><link rel="preload" href="/my_docs/assets/js/8.2f1c9ba1.js" as="script"><link rel="prefetch" href="/my_docs/assets/js/10.c7515847.js"><link rel="prefetch" href="/my_docs/assets/js/11.e3008bf3.js"><link rel="prefetch" href="/my_docs/assets/js/12.cee9b2c7.js"><link rel="prefetch" href="/my_docs/assets/js/13.910d942c.js"><link rel="prefetch" href="/my_docs/assets/js/14.2258f713.js"><link rel="prefetch" href="/my_docs/assets/js/15.3e105205.js"><link rel="prefetch" href="/my_docs/assets/js/16.78523aea.js"><link rel="prefetch" href="/my_docs/assets/js/3.d964674d.js"><link rel="prefetch" href="/my_docs/assets/js/4.60679e42.js"><link rel="prefetch" href="/my_docs/assets/js/5.12b8ce7b.js"><link rel="prefetch" href="/my_docs/assets/js/6.12cafa08.js"><link rel="prefetch" href="/my_docs/assets/js/7.524e7337.js"><link rel="prefetch" href="/my_docs/assets/js/9.1edc5ee3.js">
+    <link rel="stylesheet" href="/my_docs/assets/css/0.styles.abe11094.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/my_docs/" class="home-link router-link-active"><!----> <span class="site-name">前端总结与思考</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/my_docs/javascript/" class="nav-link">JAVASCRIPT</a></div><div class="nav-item"><a href="/my_docs/vue/" class="nav-link">VUE</a></div><div class="nav-item"><a href="/my_docs/react/" class="nav-link">REACT</a></div><div class="nav-item"><a href="/my_docs/html&amp;css/" class="nav-link router-link-active">HTML&amp;CSS</a></div><div class="nav-item"><a href="/my_docs/weixin/" class="nav-link">WEIXIN</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/my_docs/javascript/" class="nav-link">JAVASCRIPT</a></div><div class="nav-item"><a href="/my_docs/vue/" class="nav-link">VUE</a></div><div class="nav-item"><a href="/my_docs/react/" class="nav-link">REACT</a></div><div class="nav-item"><a href="/my_docs/html&amp;css/" class="nav-link router-link-active">HTML&amp;CSS</a></div><div class="nav-item"><a href="/my_docs/weixin/" class="nav-link">WEIXIN</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>html&amp;css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/my_docs/html&amp;css/margin.html" class="sidebar-link">margin:auto 为什么可以实现垂直居中？</a></li><li><a href="/my_docs/html&amp;css/扇形.html" class="sidebar-link">用css画一个扇形？</a></li><li><a href="/my_docs/html&amp;css/垂直居中.html" class="active sidebar-link">用css实现已知或者未知宽度的垂直水平居中？</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="用css实现已知或者未知宽度的垂直水平居中？"><a href="#用css实现已知或者未知宽度的垂直水平居中？" class="header-anchor">#</a> 用css实现已知或者未知宽度的垂直水平居中？</h1> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">// 1
+.wraper</span> <span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token selector">;
+    .box</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> -50px 0 0 -50px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token selector">// 2
+.wraper</span> <span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token selector">;
+    .box</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token selector">// 3
+.wraper</span> <span class="token punctuation">{</span>
+    <span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
+    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token selector">// 4
+.wraper</span> <span class="token punctuation">{</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table<span class="token selector">;
+    .box</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> table-cell<span class="token punctuation">;</span>
+    <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">//5
+.container</span> <span class="token punctuation">{</span>
+<span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+<span class="token property">grid-auto-columns</span><span class="token punctuation">:</span> 1fr<span class="token punctuation">;</span>
+<span class="token property">grid-auto-rows</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+<span class="token property">background</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.parent</span> <span class="token punctuation">{</span>
+<span class="token property">background</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+<span class="token property">justify-self</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token property">align-self</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.child</span> <span class="token punctuation">{</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">//6、块级元素：calc()
+.parent</span> <span class="token punctuation">{</span>
+<span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token property">border</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span>
+<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.child</span> <span class="token punctuation">{</span>
+<span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token function">-webkit-calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span>100% - 100px<span class="token punctuation">)</span> / 2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token function">-moz-calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span>100% - 100px<span class="token punctuation">)</span> / 2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token function">-ms-calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span>100% - 100px<span class="token punctuation">)</span> / 2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span>100% - 100px<span class="token punctuation">)</span> / 2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">background-clip</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">//7、margin:auto实现绝对定位元素的居中
+.element</span> <span class="token punctuation">{</span>
+<span class="token property">width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span> <span class="token comment">/* 有了这个就自动居中了 */</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">//8、
+.parent</span><span class="token punctuation">{</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.parent</span><span class="token punctuation">{</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+<span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.child</span><span class="token punctuation">{</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> 0 0 auto<span class="token punctuation">;</span>
+<span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/my_docs/html&amp;css/扇形.html" class="prev">用css画一个扇形？</a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/my_docs/assets/js/app.8092673c.js" defer></script><script src="/my_docs/assets/js/2.251bf567.js" defer></script><script src="/my_docs/assets/js/8.2f1c9ba1.js" defer></script>
+  </body>
+</html>
